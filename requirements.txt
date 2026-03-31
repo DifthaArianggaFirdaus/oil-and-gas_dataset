@@ -4,3 +4,4 @@ matplotlib==3.9.2
 seaborn==0.13.2
 folium==0.20.0
 streamlit==1.37.1
+pillow==10.3.0

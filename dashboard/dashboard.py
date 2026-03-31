@@ -3,6 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import folium
+import os
 
 sns.set(style="dark")
 st.set_page_config(layout="wide")
@@ -11,9 +12,14 @@ st.title("⛽ Oil & Gas Production Dashboard")
 # =========================
 # LOAD DATA
 # =========================
+
+
 @st.cache_data
 def load_data():
-    df = pd.read_csv("all_data.csv", parse_dates=["Year"])
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    file_path = os.path.join(BASE_DIR, "all_data.csv")
+    
+    df = pd.read_csv(file_path, parse_dates=["Year"])
     return df
 
 data = load_data()
